@@ -1,58 +1,63 @@
 # Domain-Specific-PDF-Summarization-Keyword-Extraction-Pipeline
 
-# Overview
-This repository implements a robust PDF processing pipeline capable of handling a large volume of PDF files. The pipeline extracts text from each PDF, preprocesses the text, extracts relevant keywords using TF-IDF, and stores the results in a MongoDB database for further analysis.
+## Overview
+The PDF Processing Pipeline is designed to efficiently extract text and keywords from multiple PDF files and store the results in MongoDB. This solution handles PDFs of varying lengths and structures, optimizing performance and resource management.
+
+## Features
+- Batch processing of PDFs from a specified folder
+- Text extraction using PyPDF2
+- Comprehensive text preprocessing (cleaning, tokenization, stopword removal, lemmatization)
+- Keyword extraction using TF-IDF
+- MongoDB integration for storing extracted text and metadata
+
+## System Requirements
+- Python 
+- MongoDB (installed and running)
+
+## Dependencies
+The project requires the following Python libraries:
+- `PyPDF2`
+- `nltk`
+- `pymongo`
+- `scikit-learn`
+- `numpy`
 
 
-# Key Features:
-
-Text Extraction:  Extracts textual content from PDF files.
-
-Text Preprocessing: Cleans and processes extracted text by removing non-alphabetic characters, stopwords, and performs tokenization and lemmatization.
-
-Keyword Extraction: Uses TF-IDF (Term Frequency-Inverse Document Frequency) to identify and extract key terms from the processed text.
-
-MongoDB Integration: Stores PDF metadata (id, pdf_path, text , summary, and keywords ) in MongoDB for easy retrieval and analysis.
 
 
+ **Set Up MongoDB**
+   Ensure MongoDB is installed and running on your local machine. You can use the default settings, or modify the connection string in the code if necessary.
 
-# Pipeline Steps
+ **Run the Pipeline**
+   Modify the `folder_path` variable in the code to point to the directory containing your PDF files:
+   ```python
+   folder_path = r"E:/wasserstoff AiInternTask"  # Update with your folder path
+   ```
 
-Text Extraction: Extracts text from PDF files using PyPDF2.
+  
 
-Text Cleaning: Removes unwanted characters and normalizes whitespace.
+## Explanation of the Solution
 
-Tokenization: Converts cleaned text into individual tokens (words).
+### PDF Ingestion
+The pipeline begins by scanning a specified folder for PDF files. It processes each PDF file one at a time, ensuring that text extraction is efficient and robust.
 
-Stopword Removal: Filters out common stopwords from tokenized text.
+### Text Extraction
+The text is extracted from PDFs using the `PyPDF2` library, which effectively handles the extraction process across various PDF formats.
 
-Lemmatization: Reduces words to their base forms using WordNet.
+### Text Preprocessing
+1. **Cleaning**: Non-alphabetic characters and excessive whitespace are removed.
+2. **Tokenization**: The cleaned text is split into individual words (tokens).
+3. **Stopword Removal**: Common words that do not contribute meaningful information are filtered out using the NLTK stopwords library.
+4. **Lemmatization**: Tokens are converted to their base forms to standardize the text.
 
-Keyword Extraction: Uses TF-IDF to identify and rank keywords from the processed text.
+### Keyword Extraction
+The pipeline employs the TF-IDF method to extract relevant keywords from the processed text, helping to identify the most significant terms in each document.
 
-Storage in MongoDB: Each PDF's metadata, including the extracted text and keywords, is stored in MongoDB.
-
-
-# Folder Structure
-
-/src: Contains all the source code for the pipeline.
-
-/data: Directory where the PDFs are stored (provided path).
-
-/docs: Documentation files for better understanding of the pipeline.
-
-
-# How to Use
-
-Place all your PDF files in the designated folder.
-
-Run the pipeline to process each PDF and store the results in MongoDB.
-
-Retrieve and analyze the stored metadata in MongoDB as needed.
+### MongoDB Storage
+Finally, the extracted text and metadata (including file paths and keywords) are stored in a MongoDB database, allowing for efficient retrieval and analysis of the processed documents.
 
 
-# Prerequisites:
 
-Ensure that MongoDB is set up locally or remotely to store the extracted data.
+
 
 
