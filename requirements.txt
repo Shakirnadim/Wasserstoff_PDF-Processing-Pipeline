@@ -1,0 +1,5 @@
+numpy
+nltk
+PyPDF2
+pymongo
+scikit-learn
