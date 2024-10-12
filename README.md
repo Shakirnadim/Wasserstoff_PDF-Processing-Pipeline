@@ -12,7 +12,7 @@ Text Preprocessing: Cleans and processes extracted text by removing non-alphabet
 
 Keyword Extraction: Uses TF-IDF (Term Frequency-Inverse Document Frequency) to identify and extract key terms from the processed text.
 
-MongoDB Integration: Stores PDF metadata (text and keywords) in MongoDB for easy retrieval and analysis.
+MongoDB Integration: Stores PDF metadata (id, pdf_path, text , summary, and keywords ) in MongoDB for easy retrieval and analysis.
 
 
 
