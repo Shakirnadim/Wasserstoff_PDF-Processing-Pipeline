@@ -29,8 +29,9 @@ The project requires the following Python libraries:
 
 1. **Clone the Repository**
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/Shakirnadim/rishi-pawar-wasserstoff-AiInternTask
+   cd rishi-pawar-wasserstoff-AiInternTask
+
    ```
 
 2. **Create a Virtual Environment (Optional but recommended)**
