@@ -92,7 +92,7 @@ def extract_keywords(text):
         processed_text = ' '.join(processed_tokens)
         vectorizer = TfidfVectorizer(stop_words='english')  # Exclude common English stopwords
         X = vectorizer.fit_transform([processed_text])
-        indices = np.argsort(X.toarray()).flatten()[-5:]  # Get the top 5 keywords
+        indices = np.argsort(X.toarray()).flatten()[-15:]  # Get the top 15 keywords
         keywords = [vectorizer.get_feature_names_out()[i] for i in indices]
         
         # Filter out generic keywords 
