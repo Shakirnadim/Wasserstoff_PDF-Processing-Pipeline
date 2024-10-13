@@ -37,7 +37,7 @@ def download_all_pdfs(pdf_urls, download_folder):
         save_path = f"{download_folder}/{file_name}"  # Path to save the file
         download_pdf(url, save_path)
 
-# Specify the folder where you want to save the downloaded PDFs
+# folder where  downloaded PDFs are saved
 download_folder = "E:/wasserstoff AiInternTask"
 
 # Call the function to download all PDFs
